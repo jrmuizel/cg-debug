@@ -105,6 +105,13 @@ typedef enum {
 	
 	/*! Leopard: Disables the magic mirror. It still appears but draws black instead of a reflection. */
 	kCGSDebugOptionSetMagicMirrorModeDisabled = 0x80000024,
+	
+	// Snow Leopard:
+	kCGSDebugOptionDumpColorProfileInfoToFile = 0x80000029,
+
+	// Snow Leopard:
+	kCGSDebugOptionDumpShmemInfoToFile = 0x8000002c
+
 } CGSDebugOption;
 
 

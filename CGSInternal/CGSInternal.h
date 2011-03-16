@@ -25,6 +25,11 @@
 #include <Carbon/Carbon.h>
 #include <ApplicationServices/ApplicationServices.h>
 
+#ifndef CG_EXTERN_C_BEGIN
+#define CG_EXTERN_C_BEGIN
+#define CG_EXTERN_C_END
+#endif
+
 #warning CGSInternal contains PRIVATE FUNCTIONS and should NOT BE USED in shipping applications!
 
 #ifndef MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_5
