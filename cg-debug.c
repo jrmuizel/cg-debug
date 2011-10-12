@@ -31,6 +31,14 @@ int main(int argc, char **argv) {
 			CGSSetDebugOptions(kCGSDebugOptionDumpShmemInfoToFile);
 		}
 
+		if (!strcmp(argv[1], "flash")) {
+			CGSSetDebugOptions(kCGSDebugOptionFlashScreenUpdates);
+		}
+
+		if (!strcmp(argv[1], "clear")) {
+			CGSSetDebugOptions(kCGSDebugOptionNone);
+		}
+
 		/*! Dumps a very verbose debug log of the WindowServer to /tmp/CGLog_WinServer_<PID>. */
 		if (!strcmp(argv[1], "vlog")) {
 			printf("starting verbose log\n");
