@@ -22,9 +22,18 @@ int main(int argc, char **argv) {
 			printf("dumping surfaces to /tmp/WindowServer.sinfo.out\n");
 			CGSSetDebugOptions(kCGSDebugOptionDumpSurfacesToFile);
 		}
+		if (!strcmp(argv[1], "color")) {
+			// color profiles
+			CGSSetDebugOptions(kCGSDebugOptionDumpColorProfileInfoToFile);
+		}
+		if (!strcmp(argv[1], "shmem")) {
+			// shmeminfo
+			CGSSetDebugOptions(kCGSDebugOptionDumpShmemInfoToFile);
+		}
 
 		/*! Dumps a very verbose debug log of the WindowServer to /tmp/CGLog_WinServer_<PID>. */
 		if (!strcmp(argv[1], "vlog")) {
+			printf("starting verbose log\n");
 			CGSSetDebugOptions(kCGSDebugOptionVerboseLogging);
 		}
 	}
