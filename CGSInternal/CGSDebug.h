@@ -29,6 +29,7 @@
 typedef enum {
 	/*! Clears all flags. */
 	kCGSDebugOptionNone = 0,
+	kCGSDebugOptionVerbose = 0x40000000,
 	
 	/*! All screen updates are flashed in yellow. Regions under a DisableUpdate are flashed in orange. Regions that are hardware accellerated are painted green. */
 	kCGSDebugOptionFlashScreenUpdates = 0x4,
@@ -77,7 +78,31 @@ typedef enum {
 	/*! Dumps a list of shadows to /tmp/WindowServer.shinfo.out. */
 	kCGSDebugOptionDumpShadowListToFile = 0x80000014,
 	
-	/*! Leopard: Dumps information about caches to `/tmp/WindowServer.scinfo.out`. */
+        /*! Dumps a list of occlusion info to /tmp/WindowServer.occinfo.out. */
+	kCGSDebugOptionDumpOcclusionListToFile = 0x8000007b,
+        
+        /*! Dumps a list of .. to /tmp/WindowServer.external.winfo.out */
+	kCGSDebugOptionDumpExternalWindowInfoToFile = 0x8000009c,
+        
+        /*! Dumps a list of .. to /tmp/WindowServer.wsinfo.out */
+	kCGSDebugOptionDumpWSToFile = 0x80000067,
+        
+        /*! Dumps a list of .. to /tmp/WindowServer.remoteinfo.out */
+	kCGSDebugOptionDumpRemoteInfoToFile = 0x8000008a,
+        
+        /*! Dumps a list of backdrops to /tmp/WindowServer.bdinfo.out */
+	kCGSDebugOptionDumpBackgroundInfoToFile = 0x800000a8,
+	
+        /*! Dumps a metal info to /tmp/WindowServer.metalinfo.out */
+	kCGSDebugOptionDumpMetalInfoToFile = 0x800000c5,
+
+        /*! Dumps a list of .. to /tmp/WindowServer.sbinfo.out */
+	kCGSDebugOptionDumpSBListToFile = 0x8000006b,
+
+        /*! Dumps WSCDIOPWSAA to /tmp/WindowServer.wscdiopwsaa.out */
+	kCGSDebugOptionDumpWSCDIOPWSAAToFile = 0x800000d6,
+
+        /*! Leopard: Dumps information about caches to `/tmp/WindowServer.scinfo.out`. */
 	kCGSDebugOptionDumpCacheInformationToFile = 0x80000015,
 	
 	/*! Leopard: Purges some sort of cache - most likely the same caches dummped with `kCGSDebugOptionDumpCacheInformationToFile`. */

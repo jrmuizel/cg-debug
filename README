@@ -1,1 +1,6 @@
 This exposes some of the Quartz Debug functionality to the command line
+
+Newer versions of macOS check for the com.apple.private.CoreGraphics.debugging entitlement
+and will refuse to do anything in this case.
+
+Attaching to Quartz Debug with SIP disabled and calling the functions manually is an alternative.

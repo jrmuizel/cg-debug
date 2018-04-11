@@ -1,3 +1,5 @@
+#include <stdint.h>
+typedef int32_t CGDisplayCoord;
 #include "CGSInternal.h"
 
 void dump_options()
@@ -18,6 +20,10 @@ void dump_options()
 
 int main(int argc, char **argv) {
 	if (argc > 1) {
+                if (!strcmp(argv[1], "opaque")) {
+                    printf("setting opaque\n");
+                    CGSSetDebugOptions(kCGSDebugOptionColorByAccelleration);
+                }
 		if (!strcmp(argv[1], "surface")) {
 			printf("dumping surfaces to /tmp/WindowServer.sinfo.out\n");
 			CGSSetDebugOptions(kCGSDebugOptionDumpSurfacesToFile);
@@ -37,6 +43,9 @@ int main(int argc, char **argv) {
 
 		if (!strcmp(argv[1], "clear")) {
 			CGSSetDebugOptions(kCGSDebugOptionNone);
+		}
+		if (!strcmp(argv[1], "window")) {
+			CGSSetDebugOptions(kCGSDebugOptionDumpWindowListToFile);
 		}
 
 		/*! Dumps a very verbose debug log of the WindowServer to /tmp/CGLog_WinServer_<PID>. */
